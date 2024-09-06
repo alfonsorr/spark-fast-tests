@@ -11,8 +11,7 @@ val versionRegex = """^(.*)\.(.*)\.(.*)$""".r
 val sparkVersion = settingKey[String]("Spark version")
 
 val scala2_13 = "2.13.13"
-val scala2_12 = "2.12.15"
-val scala2_11 = "2.11.17"
+val scala2_12 = "2.12.20"
 
 sparkVersion := System.getProperty("spark.testVersion", "3.5.1")
 crossScalaVersions := {
@@ -46,6 +45,8 @@ publishMavenStyle := true
 publishTo := sonatypePublishToBundle.value
 
 Global / useGpgPinentry := true
+
+coverageEnabled := true
 
 enablePlugins(LaikaPlugin)
 
