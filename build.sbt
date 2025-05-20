@@ -114,14 +114,6 @@ lazy val docs = (project in file("docs"))
   )
   .settings(noPublish)
 
-lazy val root = (project in file("."))
-  .settings(
-    name := "spark-fast-tests-root",
-    commonSettings,
-    noPublish
-  )
-  .aggregate(core, benchmarks, docs)
-
 scmInfo := Some(ScmInfo(url("https://github.com/mrpowers-io/spark-fast-tests"), "git@github.com:MrPowers/spark-fast-tests.git"))
 
 updateOptions := updateOptions.value.withLatestSnapshots(false)
